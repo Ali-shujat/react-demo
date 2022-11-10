@@ -45,17 +45,7 @@ function AllSuperDeveloper() {
 
   return (
     <>
-      <div className="mt-2 d-grid gap-2">
 
-        <Button
-          variant="outline-success"
-          type="button"
-          onClick={() => navigate("/superdeveloper-create")}
-        >
-          Add A Developer
-        </Button>
-
-      </div>
 
       <DeleteConfirmation
         showModal={showModal}
@@ -66,6 +56,16 @@ function AllSuperDeveloper() {
       >
 
       </DeleteConfirmation>
+
+      <Row className="mt-2 d-grid gap-2">
+        <Button
+          variant="outline-success"
+          type="button"
+          onClick={() => navigate("/superdeveloper-create")}
+        >
+          Add A Developer
+        </Button>
+      </Row>
       <Row md={3} className="g-4 mt-1">
         {superDevelopers.map((sv) => {
           return (
@@ -83,7 +83,7 @@ function AllSuperDeveloper() {
                   </Card.Text>
                   <Button
                     variant="outline-warning"
-                    onClick={() => navigate(`/developer-update/${sv.id}`)}
+                    onClick={() => navigate(`/superdeveloper-update/${sv.id}`)}
                   >
                     Edit
                   </Button>
