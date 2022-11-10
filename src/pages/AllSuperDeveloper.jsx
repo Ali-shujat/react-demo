@@ -45,7 +45,20 @@ function AllSuperDeveloper() {
 
   return (
     <>
+      <style type="text/css">
+        {`
+    .btn-flat {
+      background-color: #FFA07A;
+      color: black;
+    }
 
+    .btn-xxl {
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+    `}
+      </style>
 
       <DeleteConfirmation
         showModal={showModal}
@@ -54,10 +67,15 @@ function AllSuperDeveloper() {
         confirmDeleteHandler={confirmDeleteHandler}
         hideConfirmDeleteHandler={hideConfirmDeleteHandler}
       >
-
       </DeleteConfirmation>
 
-      <Row className="mt-2 d-grid gap-2">
+      <Button variant="flat" size="xxl"
+        onClick={() => navigate("/superdeveloper-create")}
+      >
+        ➕ Add A Developer
+      </Button>
+
+      {/* <Row className="mt-2 d-grid gap-2">
         <Button size="lg"
           variant="outline-success"
           type="button"
@@ -65,39 +83,40 @@ function AllSuperDeveloper() {
         >
           ➕ Add A Developer
         </Button>
-      </Row>
+      </Row> */}
       <Row md={4} className="g-4 mt-1">
         {superDevelopers.map((sv) => {
           return (
             <Col key={sv.id}>
               <CardGroup>
-              <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={sv.imageUrl} />
-                <Card.Body>
-                  <Card.Title>{sv.developerName}</Card.Title>
-                  <Card.Text>
-                    <b>Qualification:</b> {sv.qualification}
-                  </Card.Text>
-                  <Card.Text>
-                    <b>Expertise: </b>
-                    {sv.expertise}
-                  </Card.Text>
-                  <Card.Footer>
-                  <Button className="me-3"
-                    variant="outline-primary"
-                    onClick={() => navigate(`/superdeveloper-update/${sv.id}`)}
-                  >
-                    ✏Edit
-                  </Button>
-                  <Button className="me-3"
-                    variant="outline-danger"
-                    onClick={() => showConfirmDeleteHandler(sv.id)}
-                  >
-                    ❌Delete
-                  </Button>
-                  </Card.Footer>
-                </Card.Body>
-              </Card>
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src={sv.imageUrl} />
+                  <Card.Body>
+                    <Card.Title style={{ font: 'italic small-caps bold 1.5rem/3rem Georgia, serif' }}>{sv.developerName}</Card.Title>
+
+                    <Card.Text>
+                      <b>Qualification:</b> {sv.qualification}
+                    </Card.Text>
+                    <Card.Text>
+                      <b>Expertise: </b>
+                      {sv.expertise}
+                    </Card.Text>
+                    <Card.Footer>
+                      <Button className="me-4" size="sm"
+                        variant="outline-primary"
+                        onClick={() => navigate(`/superdeveloper-update/${sv.id}`)}
+                      >
+                        ✏Edit
+                      </Button>
+                      <Button style={{ float: 'right' }} size="sm"
+                        variant="outline-danger"
+                        onClick={() => showConfirmDeleteHandler(sv.id)}
+                      >
+                        ❌Delete
+                      </Button>
+                    </Card.Footer>
+                  </Card.Body>
+                </Card>
               </CardGroup>
             </Col>
           );
