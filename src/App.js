@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Layout from './components/shared/Layout';
+import AddSuperDeveloper from './pages/AddSuperDeveloper';
+import AllSuperDeveloper from './pages/AllSuperDeveloper';
+import UpdateDeveloper from "./pages/UpdateDeveloper";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+       <Routes>
+        <Route path="/" element={<AllSuperDeveloper />} />
+      </Routes>
+      <Routes>
+        <Route path="/superdeveloper-create" element={<AddSuperDeveloper />} />
+        <Route path="/developer-update/:id"  element={<UpdateDeveloper />}
+        />
+      </Routes>
+    </Layout>
   );
 }
 
