@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Row } from "react-bootstrap";
+import { CardGroup, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -58,7 +58,7 @@ function AllSuperDeveloper() {
       </DeleteConfirmation>
 
       <Row className="mt-2 d-grid gap-2">
-        <Button
+        <Button size="lg"
           variant="outline-success"
           type="button"
           onClick={() => navigate("/superdeveloper-create")}
@@ -66,10 +66,11 @@ function AllSuperDeveloper() {
           ➕ Add A Developer
         </Button>
       </Row>
-      <Row md={3} className="g-4 mt-1">
+      <Row md={4} className="g-4 mt-1">
         {superDevelopers.map((sv) => {
           return (
             <Col key={sv.id}>
+              <CardGroup>
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={sv.imageUrl} />
                 <Card.Body>
@@ -82,21 +83,22 @@ function AllSuperDeveloper() {
                     {sv.expertise}
                   </Card.Text>
                   <Card.Footer>
-                  <Button className="me-2"
+                  <Button className="me-3"
                     variant="outline-primary"
                     onClick={() => navigate(`/superdeveloper-update/${sv.id}`)}
                   >
-                    ✏ Edit
+                    ✏Edit
                   </Button>
-                  <Button className="me-2"
+                  <Button className="me-3"
                     variant="outline-danger"
                     onClick={() => showConfirmDeleteHandler(sv.id)}
                   >
-                    ❌ Delete
+                    ❌Delete
                   </Button>
                   </Card.Footer>
                 </Card.Body>
               </Card>
+              </CardGroup>
             </Col>
           );
         })}

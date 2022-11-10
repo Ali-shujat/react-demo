@@ -40,7 +40,7 @@ function UpdateSuperDeveloper() {
   return (
     <>
       <legend>Update SuperDeveloper</legend>
-      <form>
+      <form style={{ width: '30rem' }}>
         <Form.Group className="mb-3" controlId="formSuperDeveloperName">
           <Form.Label>Super Developer Name</Form.Label>
           <Form.Control type="text" ref={superDeveloperName} />
