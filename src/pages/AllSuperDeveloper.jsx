@@ -63,7 +63,7 @@ function AllSuperDeveloper() {
           type="button"
           onClick={() => navigate("/superdeveloper-create")}
         >
-          Add A Developer
+          ➕ Add A Developer
         </Button>
       </Row>
       <Row md={3} className="g-4 mt-1">
@@ -81,18 +81,20 @@ function AllSuperDeveloper() {
                     <b>Expertise: </b>
                     {sv.expertise}
                   </Card.Text>
-                  <Button
-                    variant="outline-warning"
+                  <Card.Footer>
+                  <Button className="me-2"
+                    variant="outline-primary"
                     onClick={() => navigate(`/superdeveloper-update/${sv.id}`)}
                   >
-                    Edit
+                    ✏ Edit
                   </Button>
-                  <Button className="ml-2"
-                    variant="danger"
+                  <Button className="me-2"
+                    variant="outline-danger"
                     onClick={() => showConfirmDeleteHandler(sv.id)}
                   >
-                    Delete
+                    ❌ Delete
                   </Button>
+                  </Card.Footer>
                 </Card.Body>
               </Card>
             </Col>

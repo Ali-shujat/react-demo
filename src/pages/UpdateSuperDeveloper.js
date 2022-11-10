@@ -42,7 +42,7 @@ function UpdateSuperDeveloper() {
       <legend>Update SuperDeveloper</legend>
       <form>
         <Form.Group className="mb-3" controlId="formSuperDeveloperName">
-          <Form.Label>Super Villain Name</Form.Label>
+          <Form.Label>Super Developer Name</Form.Label>
           <Form.Control type="text" ref={superDeveloperName} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formQualification">
@@ -58,8 +58,8 @@ function UpdateSuperDeveloper() {
           <Form.Control type="text" ref={imgUrl} />
         </Form.Group>
       </form>
-      <Button variant="primary" type="button" onClick={updateDeveloperHandler}>
-        Submit
+      <Button variant="outline-info" type="button" onClick={updateDeveloperHandler}>
+        ✔ Submit
       </Button>
     </>
   )

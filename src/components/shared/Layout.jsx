@@ -7,6 +7,7 @@ function Layout(props) {
         <div>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
+                    <Navbar.Brand>&lt; / salt &gt;</Navbar.Brand>
                     <Navbar.Brand>Supper .Net Developers</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 </Container>
